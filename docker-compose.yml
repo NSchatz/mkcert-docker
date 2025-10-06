@@ -1,0 +1,10 @@
+services:
+  mkcert:
+    build: .
+    container_name: mkcert
+    environment:
+      - DOMAIN_NAMES=plex.schatz localhost 127.0.0.1 ::1
+    volumes:
+      - ./certs:/certs
+      - ./mkcert:/root/.local/share/mkcert
+    restart: "no"
