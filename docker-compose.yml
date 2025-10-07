@@ -4,8 +4,7 @@ services:
     container_name: mkcert
     environment:
       - DOMAIN_NAMES=plex.schatz localhost 127.0.0.1 ::1
-      - CERT_DIR=/custom/certs/output
     volumes:
-      - ./custom_certs:/custom/certs/output
-      - ./mkcert:/root/.local/share/mkcert
+      - ./certs:/certs
+      - ./ca:/root/.local/share/mkcert
     restart: "no"
